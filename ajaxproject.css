@@ -81,6 +81,7 @@ border-radius: 10px;
 border: none;
 margin: 10px;
 font-weight: bold;
+font-size: 15px
 }
 .copy:hover{
  background: linear-gradient(270deg, #ff0080, #dcd1e7, #0070f3, #ff0080);
