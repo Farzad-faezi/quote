@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Roboto+Slab:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0A0A2E;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto Slab;
+    overflow-x: hidden;
+}
+.hero-contant h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-bottom: 20px;
+}
+.words{
+  position: relative;
+  display: inline-block;
+  height: 1.2em;
+  overflow: hidden;
+}
+.word{
+  display: block;
+  line-height: 1.2em;
+  animation: spin 10s infinite;
+}
+@keyframes spin{
+  0% {transform: translateY(0);}
+  20% {transform: translateY(-100%);}
+  40% {transform: translateY(-200%);}
+  60% {transform: translateY(-300%);}
+  80% {transform: translateY(-400%);}
+  100% {transform: translateY(0);}
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 40px;
+     padding: 15px;
+     height: 420px;
+     width: 100%;
+     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background-color: #dcd1e7;
+    border-radius: 10px;
+}
+@media screen and (max-width:300px){
+  .main{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.main h3{
+    line-height: 1.5;
+}
+.main p{
+  font-weight: bold;
+}
+.main button{
+width: 150px;
+padding: 10px;
+border-radius: 10px;
+border: none;
+margin: 10px;
+font-weight: bold;
+}
+.copy:hover{
+ background: linear-gradient(270deg, #ff0080, #dcd1e7, #0070f3, #ff0080);
+  background-size: 400% 400%;
+  animation: movegradient 5s ease infinite; 
+}
+@keyframes movegradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+.new:hover{
+ background: linear-gradient(270deg, #ff0080, #efe3fb, #0070f3, #ff0080);
+  background-size: 400% 400%;
+  animation: movegradient 5s ease infinite; 
+}
+@keyframes movegradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="ajaxproject.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+    </head>
+    <body>
+        <div class="hero-contant">
+          <h2 style="color: white;">
+            If you use 
+            <span class="words">
+             <span class="word">Instagram</span>
+             <span class="word">WhatsApp</span>
+             <span class="word">Telegram</span>
+             <span class="word">Facebook</span>
+             <span class="word"></span>
+            </span>
+            use this!
+          </h2>  
+        </div>
+        <div class="main">  
+        <h3 id="quote">Start with new quote</h3>
+        <p id="author">Author</p>
+        <div class="click">
+        <button id="btn" class="new" onclick="qoute()">Start</button>
+        <button id="copy" class="copy" onclick="copy()">Copy</button>
+        </div>
+        </div>
+        <script>
+           async function qoute(){
+            const btn = document.getElementById("btn");
+            btn.innerText="Loading...";
+            btn.disabled = true;
+            try{
+                let res = await fetch("https://dummyjson.com/quotes/random");
+                let data = await res.json();
+                console.log(data);
+
+                $(".main").fadeOut(300, function(){
+                document.getElementById("quote").innerText = data.quote;
+                document.getElementById("author").innerText = data.author;
+                $(".main").fadeIn(300);
+                });
+
+                } catch (error) {
+                    document.getElementById("quote").innerText="Error loading quote";
+                }
+
+                btn.innerText = "New quote";
+                btn.disabled = false;
+               
+            };
+            function copy(){
+                const quotetext = document.getElementById("quote").innerText;
+                navigator.clipboard.writeText(quotetext)
+                
+                .then(() => {
+                    alert("copied")
+                })
+                .catch(err => {
+                    alert("Copy faild!");
+                });
+            };
+        </script>
+    </body>
